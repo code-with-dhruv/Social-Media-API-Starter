@@ -2,12 +2,7 @@
 
 This project is a Django-based web application that includes a Search API for querying users by name or email. It supports pagination and provides an interface for managing friend requests between users.
 
-## Features
-- User management
-- Friend request handling
-- Search functionality to find users by name or email
-- API endpoints to manage and query data
-- Docker support for easy containerization and deployment
+
 
 ## Project Structure
 - **myproject/**: Root directory for the Django project.
@@ -33,5 +28,6 @@ This project is a Django-based web application that includes a Search API for qu
 
 1. **Clone the Repository**
    ```sh
-   git clone https://github.com/your-repo/your-project.git
-   cd your-project
+   git clone https://github.com/code-with-dhruv/Accuknox_dhruv
+   cd myproject
+   
