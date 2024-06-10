@@ -1,0 +1,86 @@
+<!-- authentication/templates/signup.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px;
+            border: none;
+            background-color: #5cb85c;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+        .login-link {
+            margin-top: 20px;
+        }
+        .login-link a {
+            color: #5cb85c;
+            text-decoration: none;
+        }
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sign Up</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            {% if form.errors %}
+                <ul style="color: red;">
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    {% endfor %}
+                    {% for error in form.non_field_errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            <button type="submit">Sign Up</button>
+        </form>
+        <div class="login-link">
+            <p>Already have an account? <a href="{% url 'login' %}">Log in here</a></p>
+        </div>
+    </div>
+</body>
+</html>
