@@ -4,6 +4,7 @@ This project is a Django-based web application that includes a Search API for qu
 
 
 
+
 ## Project Structure
 - **myproject/**: Root directory for the Django project.
   - **myproject/settings.py**: Django settings for the project.
